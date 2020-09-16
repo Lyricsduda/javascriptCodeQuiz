@@ -118,3 +118,14 @@ function restartGame() {
     document.getElementById("quizMain").innerHTML = quizFinal;
 }
 
+// Function to where if the user guess the question wrong, 15 seconds are deducted from therer timer
+function incorrectAnswer() {
+    timeCountdown -= 15;
+    next();
+}
+// Function to where if the user guess the question right, 20 seconds are added from therer timer
+function correctAnswer() {
+    score += 20;
+    next();
+}
+
