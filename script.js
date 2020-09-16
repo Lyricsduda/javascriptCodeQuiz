@@ -53,3 +53,14 @@ function startButton() {
     next();
 }
 
+function gameOver() {
+    clearInterval(timer);
+
+    var quizFinal = `
+    <h1>All done!</h1>
+    <p>Your final score is ` + score + `</p>
+    Enter Initials: <input type="text" id="name" placeholder="First name"> 
+    <button onclick="setfinalScore()">Submit</button>`;
+
+    document.getElementById("quizMain").innerHTML = quizFinal;
+}
