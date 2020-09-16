@@ -53,6 +53,7 @@ function startButton() {
     next();
 }
 
+// Function to stop the game and bring you to the end screen
 function gameOver() {
     clearInterval(timer);
 
@@ -64,3 +65,37 @@ function gameOver() {
 
     document.getElementById("quizMain").innerHTML = quizFinal;
 }
+
+
+
+
+
+
+// Saves the games scores onto local storage
+function setfinalScore() {
+    localStorage.setItem("highscore", score);
+    localStorage.setItem("highscoreName", document.getElementById('name').value);
+    getHighScore();
+}
+
+function getHighScore() {
+    var quizFinal = `
+    <h1>` + localStorage.getItem("highscoreName") + `'s Highscore: </h1>
+    <p>` + localStorage.getItem("highscore") + `</p><br> 
+    
+    <button onclick="restartGame()">Go back</button><button onclick="clearHighScore()">Clear highscore</button>
+    
+    `;
+
+    document.getElementById("quizMain").innerHTML = quizFinal;
+}
+
+// Clears highscores when the clear highscore button is selected
+function clearHighScore() {
+    localStorage.setItem("highscore", "");
+    localStorage.setItem("highscoreName", "");
+
+    restartGame();
+}
+
+
