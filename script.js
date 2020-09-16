@@ -33,3 +33,23 @@ var score = 0;
 var currentQuestion = -1;
 var timeCountdown = 0;
 var timer;
+
+// function to activate the counter when the start button is clicked and to end the time when its under 0
+function startButton() {
+
+    timeCountdown = 75;
+    document.getElementById("timeCountdown").innerHTML = timeCountdown;
+
+    timer = setInterval(function () {
+        timeCountdown--;
+        document.getElementById("timeCountdown").innerHTML = timeCountdown;
+
+        if (timeCountdown <= 0) {
+            clearInterval(timer);
+            gameOver();
+        }
+    }, 1000);
+
+    next();
+}
+
