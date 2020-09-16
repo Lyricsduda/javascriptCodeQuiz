@@ -99,3 +99,22 @@ function clearHighScore() {
 }
 
 
+// Function to reset the game to the main screen
+function restartGame() {
+    clearInterval(timer);
+    score = 0;
+    currentQuestion = -1;
+    timeCountdown = 0;
+    timer = null;
+
+    document.getElementById("timeCountdown").innerHTML = timeCountdown;
+
+    var quizFinal = `
+    <h1>Coding Quiz Challenge</h1>
+    <p>Try to answer the following code-related questions within the time limit.<br> Keep in mind that incorrect
+    anwser will penalize your score/time <br> by ten seconds! </p>
+    <button onclick="startButton()">Start</button>`;
+
+    document.getElementById("quizMain").innerHTML = quizFinal;
+}
+
