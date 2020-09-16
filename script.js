@@ -129,3 +129,28 @@ function correctAnswer() {
     next();
 }
 
+// function to go through the questions
+function next() {
+    currentQuestion++;
+
+    if (currentQuestion > questions.length - 1) {
+        gameOver();
+        return;
+    }
+
+    var quizFinal = "<h1>" + questions[currentQuestion].question + "</h1>"
+
+    for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].choices.length; buttonLoop++) {
+        var buttonAction = "<button onclick=\"[ANS]\">[CHOICE]</button>";
+        buttonAction = buttonAction.replace("[CHOICE]", questions[currentQuestion].choices[buttonLoop]);
+        if (questions[currentQuestion].choices[buttonLoop] == questions[currentQuestion].answer) {
+            buttonAction = buttonAction.replace("[ANS]", "correctAnswer()");
+        } else {
+            buttonAction = buttonAction.replace("[ANS]", "incorrectAnswer()");
+        }
+        quizFinal += buttonAction
+    }
+
+
+    document.getElementById("quizMain").innerHTML = quizFinal;
+}
