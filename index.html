@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ <!-- Document Head Start -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +8,26 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="script.js" type="text/javascript"></script>
 </head>
-
+<!-- Document Head End -->
+<!-- Document Body Start -->
 <body>
+    <!-- Document Body Start -->
     <nav>
         <div class="left">
+            <!-- Highscores button -->
             <a onclick="getHighScore()" href="#">
                 <div class="score">View Highscore</div>
             </a>
         </div>
-
+        <!-- Time countdown counter -->
         <div class="right">
             <div class="time">Time: <span id="timeCountdown">0</span></div>
         </div>
     </nav>
-
+    <!-- Doucment Nav End -->
+<!-- Document Main Start -->
     <main>
+        <!-- Main quiz HTML code -->
         <div id="quizMain">
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit.<br> Keep in mind that incorrect
@@ -30,7 +35,7 @@
             <button onclick="startButton()">Start</button>
         </div>
     </main>
-
+<!-- Document Main End -->
 </body>
 
 </html>

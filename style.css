@@ -1,3 +1,5 @@
+/* Nav CSS start */
+
 .right {
     float: right;
 }
@@ -11,7 +13,6 @@ nav{
     display: block;
     display: inline-block;
     width: 99%;
-   
 }
 
 .score {
@@ -22,7 +23,10 @@ a {
     text-decoration: none;
     color: black;
 }
+/* Nav CSS end */
 
+
+/* Main CSS start */
 main {
     text-align: center;
     padding: 50px;
@@ -38,3 +42,4 @@ button {
     font-size: 20px;
     margin: 4px;
 }
+/* Main CSS end */
